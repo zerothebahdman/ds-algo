@@ -67,6 +67,27 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+
+    this.head.next = null;
+    this.head = first;
+
+    return this.printList();
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -75,6 +96,6 @@ myLinkedList.prepend(16);
 myLinkedList.append(1);
 myLinkedList.insert(2, 99);
 myLinkedList.insert(20, 88);
+myLinkedList.reverse();
 
 console.log(myLinkedList.printList());
-// <#SoftwareEngineer/>@p@55word

@@ -4,7 +4,7 @@ class Node {
     this.next = null;
   }
 }
-
+// A stack is LIFO (last in first out) and a queue is FIFO (first in first out). Use a stack when you want to add and remove elements from the top of the stack.
 class Stack {
   constructor() {
     this.top = null;

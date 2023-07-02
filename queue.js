@@ -18,7 +18,7 @@ class Queue {
   }
   enqueue(value) {
     const newNode = new Node(value);
-    if (this.length === 0) {
+    if (this.isEmpty()) {
       this.first = newNode;
       this.last = newNode;
     } else {
